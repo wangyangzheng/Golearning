@@ -7,6 +7,13 @@ import (
 
 type MyInt int64
 
+//不可以使用1,0来表示true或false
+
+func Test(t *testing.T) {
+	//错误t.Log(1 > 2 == 1)
+	t.Log(1 > 2 == true)
+}
+
 //不支持隐式的转换
 func TestImplicit1(t *testing.T) {
 	var a int64 = 1
@@ -16,6 +23,7 @@ func TestImplicit1(t *testing.T) {
 	c = MyInt(a)
 	t.Log(a, b, c)
 }
+
 
 //预定义的值
 func TestDefine(t *testing.T) {
