@@ -25,9 +25,28 @@
 
 
 #### 循环语句和循环语句
-1. Go语言中支持一边赋值,一边使用变量的条件语句
+1. Go语言中支持一边赋值,一边判断条件的条件语句
 2. Go语言只支持`for`循环
 3. Go语言的`switch`不需要使用`break`这个关键字
+
+```go
+func TestArray1(t *testing.T) {
+	arr := [...]int {1, 2, 3}
+	if ok := arr[0] == 1; ok{
+		t.Log(arr[0])
+	}
+}
+```
+
+```go
+func TestArray(t *testing.T) {
+	arr := [...] int {1, 2, 3, 5}
+	//idx表示下标,value表示值
+	for idx, value := range arr {
+		t.Log(idx, value)
+	} 
+}
+```
 
 #### 数组
 1. 数组的声明
@@ -46,3 +65,12 @@ a[1, 2]
 #### 切片
 1. 切片有长度，个数， 容量
 2. 切片的内存是共享的
+
+#### map
+1. map有两部分组成一部分是`键`,一部分是`值`
+2. map的三种声明方式
+```go
+m1 := map[int]int{1 : 1, 2 : 2}
+m2 := map[int]int {}
+m3 := make(map[int] int, 10)
+```
