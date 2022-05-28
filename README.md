@@ -86,6 +86,7 @@ m3 := make(map[int] int, 10)
 1. 函数可以有多个返回值
 2. 函数的返回值可以是函数
 3. 函数的参数是可变长的
+4. Go语言中还有延时函数
 
 
 关于函数可以有多个返回值的演示
@@ -142,15 +143,15 @@ func TestVarParam(t *testing.T) {
 	t.Log(Sum(1, 2, 3, 4, 5))
 }
 ```
-
-关于defer的演示
-```go
-func Clear(){
-	fmt.Println("claer resources")
-}
-
+关于defer的使用
+可以帮助我们释放锁
+```
 func TestDefer(t *testing.T) {
 	defer Clear()
 	fmt.Println("start")
+	//报错,退出
+	panic("err")
+	//不会执行
+	fmt.Print("err")
 }
 ```
