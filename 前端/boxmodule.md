@@ -289,6 +289,45 @@
 ```
 ![tsxyT.png](https://s1.328888.xyz/2022/05/28/tsxyT.png)
 
-此时的背景是黑色，但是我们设置了`padding`
+
+给盒子加一个边框
+```html
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+    <style type = "text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    #foo {
+        width: 300px;
+        height: 300px;
+        background: gold;
+        padding: 50px;
+        border: solid red 20px;
+    }
+    #son {
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+    </style>
+</head>
+<body>
+    <div id = "foo">
+        <div id = "son"></div>
+    </div>
+</body>
+
+</html>
+```
+![tIc2A.png](https://s1.328888.xyz/2022/05/28/tIc2A.png)
+
+
+
 #### border的使用
 1. border表示边框
