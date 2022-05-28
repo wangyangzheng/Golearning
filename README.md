@@ -142,3 +142,15 @@ func TestVarParam(t *testing.T) {
 	t.Log(Sum(1, 2, 3, 4, 5))
 }
 ```
+
+关于defer的演示
+```go
+func Clear(){
+	fmt.Println("claer resources")
+}
+
+func TestDefer(t *testing.T) {
+	defer Clear()
+	fmt.Println("start")
+}
+```
