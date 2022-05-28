@@ -215,5 +215,80 @@
 1. padding的颜色就是盒子的背景色
 2. padding也有上，右，下，左四个属性
 
+我们设置了一个父`div`，然后又设置了一个子`div`,让子`div`铺满父`div`,然后使用`padding`扩展父`div`
+
+```html
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+    <style type = "text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    #foo {
+        width: 300px;
+        height: 300px;
+        background: gold;
+        padding: 50px;
+    }
+    #son {
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+    </style>
+</head>
+<body>
+    <div id = "foo">
+        <div id = "son"></div>
+    </div>
+</body>
+
+</html>
+```
+![t7gMC.png](https://s1.328888.xyz/2022/05/28/t7gMC.png)
+
+
+上,右,下，左分别设置不同的值
+```html
+<!DOCTYPE HTML>
+
+<html>
+<head>
+
+    <style type = "text/css">
+    * {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    #foo {
+        width: 300px;
+        height: 300px;
+        background: gold;
+        padding: 10px 20px 10px 20px;
+    }
+    #son {
+        width: 100%;
+        height: 100%;
+        background: black;
+    }
+    </style>
+</head>
+<body>
+    <div id = "foo">
+        <div id = "son"></div>
+    </div>
+</body>
+
+</html>
+```
+![tsxyT.png](https://s1.328888.xyz/2022/05/28/tsxyT.png)
+
+此时的背景是黑色，但是我们设置了`padding`
 #### border的使用
 1. border表示边框
