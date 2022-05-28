@@ -84,4 +84,61 @@ m3 := make(map[int] int, 10)
 
 #### 函数
 1. 函数可以有多个返回值
-2. 函数的参数是可变长的
+2. 函数的返回值可以是函数
+3. 函数的参数是可变长的
+
+
+关于函数可以有多个返回值的演示
+```go
+func returnMultiValues() (int, int) {
+	return rand.Intn(10), rand.Intn(20)	
+}
+
+func TestFn(t *testing.T) {
+	a, b := returnMultiValues()
+	t.Log(a, b) 
+	
+}
+```
+
+函数的返回值也可以是函数
+```go
+func timeFn(inner func (op int) int) func (op int) int {
+	return func (n int) int {
+		start := time.Now()
+		ret := inner(n)
+		fmt.Println("time spent:", time.Since(start).Seconds())
+		return ret
+	}
+}
+
+//传入的参数
+func slowFun(op int) int {
+	time.Sleep(time.Second * 1)
+	return op 
+}
+
+func TestFn1(t *testing.T) {
+	tsSF := timeFn(slowFun)
+	t.Log(tsSF(10))
+}
+
+```
+
+
+关于可变长参数的演示
+```go
+//opd是可变长参数
+func Sum(ops ...int) int {
+	res := 0
+	for _, op := range ops {
+		res += op
+	}
+	return res
+}
+
+func TestVarParam(t *testing.T) {
+	t.Log(Sum(1, 2, 3, 4))
+	t.Log(Sum(1, 2, 3, 4, 5))
+}
+```
