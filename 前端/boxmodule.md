@@ -212,3 +212,8 @@
 ![tWTFF.png](https://s1.328888.xyz/2022/05/28/tWTFF.png)
 
 #### pading的使用
+1. padding的颜色就是盒子的背景色
+2. padding也有上，右，下，左四个属性
+
+#### border的使用
+1. border表示边框
